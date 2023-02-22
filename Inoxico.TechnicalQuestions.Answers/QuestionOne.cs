@@ -14,7 +14,8 @@ namespace Inoxico.TechnicalQuestions.Answers
             string[] sentances = s.Split(new char[] { '.', '?', '!' }); // break down the whole string into sentances based on the specified characters 
 
             int maxWords = 0;
-            
+            string longestSentance = "";
+
             foreach(string sentance in sentances)
             {
                 string[] currSenWords = sentance.Split(" "); // split the whole sentance into words
@@ -24,6 +25,7 @@ namespace Inoxico.TechnicalQuestions.Answers
                 if (wordsCount > maxWords)
                 {
                     maxWords = wordsCount;
+                    longestSentance = sentance; // update the longest word
                 }
             }
 
