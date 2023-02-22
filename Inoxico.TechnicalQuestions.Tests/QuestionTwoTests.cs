@@ -14,6 +14,10 @@ namespace Inoxico.TechnicalQuestions.Tests
             var result = QuestionTwo.GetPitDepth(points);
 
             Assert.Equal(4, result);
+
+            var points2 = new[] { 1, 2, 3, 1, 2, 3, 1, 2, 3 };
+            int result1 = QuestionTwo.GetPitDepth(points2);
+            Assert.Equal(2, result1);
         }
     }
 }

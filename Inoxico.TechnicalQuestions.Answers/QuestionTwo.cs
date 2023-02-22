@@ -39,10 +39,14 @@ namespace Inoxico.TechnicalQuestions.Answers
                         end++;
                     }
 
-                    int depth = Math.Min(points[start] - points[bottom], points[end] - points[bottom]); //The depth of a pit (P, Q, R)
-                    if (depth > deepestPit)
+                    // check if we found a valid pit, 0 ≤ P > Q < R 
+                    if (start < bottom && bottom < end && points[start] > 0 && points[end] > 0) //triplet (P, Q, R) to be considered a valid pit in the given array
                     {
-                        deepestPit = depth;
+                        int depth = Math.Min(points[start] - points[bottom], points[end] - points[bottom]); //The depth of a pit (P, Q, R)
+                        if (depth > deepestPit)
+                        {
+                            deepestPit = depth;
+                        }
                     }
 
                     start = end; //update using the last pit
